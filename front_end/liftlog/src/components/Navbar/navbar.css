@@ -1,0 +1,95 @@
+.NavbarItems{
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  padding: 0 2.5%;
+  background-color: #222;
+  box-shadow: 0 5px 15px rgb(0,0,0,0.25);
+  width: 90%;
+  height: 80px;
+  border-radius: 13px;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.NavLinks{
+  display: flex;
+  width: 30%;
+  padding-right: 35px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+  padding: 10px 17px;
+  border-radius: 13px;
+}
+
+a:hover{
+  background-color: rgba(192,192,192,0.3);
+}
+
+.logo{
+  color: white;
+  justify-self: start;
+  cursor: pointer;
+}
+
+.menu-icons{
+  display: none;
+}
+
+@media screen and (max-width: 700px){
+  .NavLinks{
+    display: none;
+  }
+
+  .menu-icons{
+    display: flex;
+    align-items: center;
+  }
+
+  .FabarsDisplay, .FaCrossDisplay{
+    font-size: 1.2rem;
+    color: white;
+  }
+
+  .FabarsHidden, .FaCrossHidden{
+    display: none;
+  }
+
+  .Links{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    background: rgba(0,0,0,.4);
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,.37);
+    backdrop-filter: blur(4px);
+    border-radius: 13px;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0%;
+    align-items: stretch;
+    padding: 80px 0 5px 0;
+    margin: 0;
+    z-index: -1;
+  }
+
+  a{
+    display: block;
+    widows: 100%;
+    padding: 2rem 0;
+    color: black;
+  }
+
+  a:hover{
+    backdrop-filter: blur(20px);
+  }
+}
