@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return(
     <nav className="NavbarItems">
-      <h1 className="logo">Liftlog <FontAwesomeIcon icon={faDumbbell} /></h1>
+      <h1 className="logo2">Liftlog <FontAwesomeIcon icon={faDumbbell} /></h1>
       <div className="menu-icons">
         <FontAwesomeIcon icon={faBars} onClick={handleClick} className={toggle ? "FabarsHidden" : "FabarsDisplay"}/>
         <FontAwesomeIcon icon={faXmark} onClick={handleClick} className={toggle ? "FaCrossDisplay" : "FaCrossHidden"}/>
