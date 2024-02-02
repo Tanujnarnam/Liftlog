@@ -22,14 +22,14 @@
   align-items: center;
 }
 
-a{
+.anchor{
   color: white;
   text-decoration: none;
   padding: 10px 17px;
   border-radius: 13px;
 }
 
-a:hover{
+.anchor:hover{
   background-color: rgba(192,192,192,0.3);
 }
 

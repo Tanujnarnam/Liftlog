@@ -8,7 +8,7 @@ const Login = () => {
     <>
     <form>
     <h1 className="logo">Liftlog <FontAwesomeIcon icon={faDumbbell} /></h1>
-    <input type="text" autocomplete="off" name="text" className="input" placeholder="Username" />
+    <input type="text" autocomplete="off" name="text" className="input" placeholder="Username" required/>
     <input type="password" placeholder="Password" className="input" required/>
     <Link to="/home">
     <button class="animated-button">

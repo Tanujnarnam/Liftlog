@@ -34,13 +34,13 @@ const Navbar = () => {
         <FontAwesomeIcon icon={faXmark} onClick={handleClick} className={toggle ? "FaCrossDisplay" : "FaCrossHidden"}/>
       </div>
       <div className={toggle ? "Links" : "NavLinks"}>
-        <NavLink exact="true">
+        <NavLink exact="true" className="anchor" to="/home">
           Home
         </NavLink>
-        <NavLink exact="true">
+        <NavLink exact="true" className="anchor" to="/track">
           Track
         </NavLink>
-        <NavLink exact="true">
+        <NavLink exact="true" className="anchor" to="/view">
           View
         </NavLink>
       </div>
