@@ -23,7 +23,7 @@ const Track = () => {
         <input className="track-input"></input>
       </div>
     </div>
-    <Link to="/home" className="animated-button2">
+    <Link to="/view" className="animated-button2">
       <span>Track</span>
       <span></span>
     </Link>
