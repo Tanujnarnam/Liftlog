@@ -88,3 +88,13 @@ input{
   height: 150px;
   opacity: 1;
 }
+
+.disappear{
+  display: none;
+}
+
+@media screen and (max-width:800px){
+  .incorrect{
+    font-size: 12px;
+  }
+}

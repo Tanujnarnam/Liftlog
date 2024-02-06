@@ -1,16 +1,55 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDumbbell } from "@fortawesome/free-solid-svg-icons";
 import './login.css'
 
 const Login = ({setAuth}) => {
+  const [username, setUser] = useState('');
+  const [password, setPass] = useState('');
+  const [valid, setValid] = useState(true);
+
+  const onChange1 = e => {
+    setUser(e.target.value);
+  };
+  const onChange2 = e => {
+    setPass(e.target.value);
+  };
+
+  const onSubmitForm = async (e) => {
+    e.preventDefault();
+    try{
+      const body = { username, password }
+
+      const response = await fetch("http://localhost:5000/auth/login", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(body)
+      });
+
+      const parseRes = await response.json();
+
+      if(parseRes === "Password or Username is incorrect"){
+        setValid(false);
+        return;
+      }
+
+      localStorage.setItem("token", parseRes.token)
+
+      setAuth(true);
+    } catch(err){
+      console.error(err.message);
+    }
+  }
+
   return(
     <>
-    <form>
+    <form onSubmit={onSubmitForm}>
     <h1 className="logo">Liftlog <FontAwesomeIcon icon={faDumbbell} /></h1>
-    <input type="text" autocomplete="off" name="text" className="input" placeholder="Username" required/>
-    <input type="password" placeholder="Password" className="input" required/>
-    <button to="/home" onClick={() => setAuth(true)} className="animated-button">
+    <input type="text" value={username} onChange={e => onChange1(e)} name="text" className="input" placeholder="Username" required/>
+    <input type="password" value={password} onChange={e => onChange2(e)} placeholder="Password" className="input" required/>
+    <h2 className={valid ? "disappear" : "incorrect"}>Password or Username is incorrect</h2>
+    <button to="/home" className="animated-button">
       <span>Submit</span>
       <span></span>
     </button>

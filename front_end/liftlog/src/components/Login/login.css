@@ -19,7 +19,7 @@ input{
 }
 
 .input {
-  width: 60%;
+  width: 100%;
   margin: 1%;
   border: none;
   outline: none;
@@ -92,4 +92,15 @@ input{
 .create-account{
   font-weight: bold;
   color: black;
+  margin-top: 3%;
+}
+
+.disappear{
+  display: none;
+}
+
+@media screen and (max-width:800px){
+  .incorrect{
+    font-size: 12px;
+  }
 }
