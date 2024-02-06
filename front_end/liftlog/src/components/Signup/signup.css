@@ -53,6 +53,7 @@ input{
   cursor: pointer;
   overflow: hidden;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  text-decoration: none;
 }
 
 .animated-button span:last-child {

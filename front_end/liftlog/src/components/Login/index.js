@@ -3,17 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDumbbell } from "@fortawesome/free-solid-svg-icons";
 import './login.css'
 
-const Login = () => {
+const Login = ({setAuth}) => {
   return(
     <>
     <form>
     <h1 className="logo">Liftlog <FontAwesomeIcon icon={faDumbbell} /></h1>
     <input type="text" autocomplete="off" name="text" className="input" placeholder="Username" required/>
     <input type="password" placeholder="Password" className="input" required/>
-    <Link to="/home" className="animated-button">
+    <button to="/home" onClick={() => setAuth(true)} className="animated-button">
       <span>Submit</span>
       <span></span>
-    </Link>
+    </button>
     <Link to="signup" className="create-account">
       <span>Create Account</span>
     </Link>
