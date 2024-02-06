@@ -1,40 +1,35 @@
-.Track{
+.track-form{
   position: absolute;
-  top: 35%;
-  left: 7.5%;
-  width: 85%;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-}
-
-.track-div label{
-  display: flex;
-  flex-direction: column-reverse;
-}
-
-select{
-  height: 48px;
-  width: 90%;
-  font-size: 21px;
-  font-family: sans-serif;
-  border-radius: 15px;
-  border: solid 2px black;
   text-align: center;
 }
 
-.track-input{
-  width: 80%;
-  text-align: center;
-  border-radius: 15px;
-  font-size: 21px;
+.track-form .track-div{
+  width: 100%;
+  overflow: hidden;
 }
 
-.animated-button2 {
-  position: absolute;
-  top: 45%;
-  left: 48%;
+.track-form select{
+  width: 95%;
+}
+
+.track-form input{
+  width: 95%;
+  box-sizing: border-box;
+}
+
+
+.track-button {
+  width: 100px;
+  position: relative;
+  top: 90px;
+  left: 47%;
   transform: translateX(-50%);
-  display: inline-block;
   padding: 12px 24px;
   margin: 1%;
   border: none;
@@ -51,7 +46,7 @@ select{
   text-decoration: none;
 }
 
-.animated-button2 span:last-child {
+.track-button span:last-child {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -64,21 +59,21 @@ select{
   transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-.animated-button2 span:first-child {
+.track-button span:first-child {
   position: relative;
   z-index: 1;
 }
 
-.animated-button2:hover {
+.track-button:hover {
   box-shadow: 0 0 0 2px lightgrey;
   color: #ffffff;
 }
 
-.animated-button2:active {
+.track-button:active {
   scale: 0.95;
 }
 
-.animated-button2:hover span:last-child {
+.track-button:hover span:last-child {
   width: 150px;
   height: 150px;
   opacity: 1;

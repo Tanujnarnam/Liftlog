@@ -39,7 +39,7 @@ const Signup = ({setAuth}) => {
 
       const response = await fetch("http://localhost:5000/auth/register", {
         method: "POST",
-        headers: {"Content-Type" : "application/json"},
+        headers: {token: localStorage.token},
         body: JSON.stringify(body)
       });
 
@@ -56,7 +56,7 @@ const Signup = ({setAuth}) => {
 
   return(
     <>
-    <form onSubmit={onSubmitForm}>
+    <form onSubmit={onSubmitForm} className="signup-form">
       <h1 className="logo">Liftlog <FontAwesomeIcon icon={faDumbbell} /></h1>
       <input type="text" value={username} onChange={e => onChange1(e)} className="input" placeholder="Username" required/>
       <input type="password" value={password} onChange={e => onChange2(e)} placeholder="Password" className="input" required/>

@@ -44,7 +44,7 @@ const Login = ({setAuth}) => {
 
   return(
     <>
-    <form onSubmit={onSubmitForm}>
+    <form onSubmit={onSubmitForm} className="login-form">
     <h1 className="logo">Liftlog <FontAwesomeIcon icon={faDumbbell} /></h1>
     <input type="text" value={username} onChange={e => onChange1(e)} name="text" className="input" placeholder="Username" required/>
     <input type="password" value={password} onChange={e => onChange2(e)} placeholder="Password" className="input" required/>
