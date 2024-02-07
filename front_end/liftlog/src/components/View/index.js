@@ -1,33 +1,75 @@
-import { Link } from 'react-router-dom';
+import {useState, useEffect} from 'react'
 import './view.css'
 
 const View = () => {
+
+  const [data, setData] = useState([]);
+  const [filterdata, setfiltData] = useState([]);
+  const [searchQuery, setQuery] = useState('');
+
+  const handleSearchChange = (event) => {
+    setQuery(event.target.value)
+  }
+
+  const getData = async () => {
+    try{
+      const response = await fetch("http://localhost:5000/dashboard/view" ,{
+        method: "GET",
+        headers: {token: localStorage.token}
+      });
+
+      const parseRes = await response.json();
+
+      setData(parseRes);
+      setfiltData(parseRes);
+    }
+    catch(err){
+      console.error(err.message);
+    }
+  }
+  
+  useEffect(() => {
+    getData()
+  }, []);
+
+  useEffect(() => {
+    setfiltData((data).filter((el) => {
+      return el.exercise.toLowerCase().startsWith(searchQuery.toLowerCase());
+    }));
+  }, [searchQuery]
+  )
+
+  console.log(data);
+
   return(
     <>
-    <div className='Track'>
-      <div className='track-div'>
-        <label>Exercise</label>
-        <select name="selectedFruit">
-          <option value="ibp">Inclined Bench Press</option>
-          <option value="pdf">Peck Deck Flies</option>
-          <option value="lr">Lateral Raises</option>
-          <option value="rdf">Rear Delt Flies</option>
-        </select>
-      </div>
-      <div className='track-div'>
-        <label>Weight(lbs)</label>
-        <input className="track-input"></input>
-      </div>
-      <div className='track-div'>
-        <label>Reps</label>
-        <input className="track-input"></input>
-      </div>
+    <div className='exercise-search'>
+      <input type="text" placeholder='Search for exercise' value={searchQuery} onChange={handleSearchChange} className="search-bar"/>
     </div>
-    <Link to="/view" className="animated-button2">
-      <span>Track</span>
-      <span></span>
-    </Link>
-    </>
+    <div className='table'>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Exercise</th>
+          <th>Weight</th>
+          <th>Reps</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          filterdata.map(entry => (
+            <tr>
+              <td>{entry.date.toString().slice(0,10)}</td>
+              <td>{entry.exercise}</td>
+              <td>{entry.weight}</td>
+              <td>{entry.reps}</td>
+            </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  </>
   )
 }
 

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import './track.css'
 import { useState } from 'react';
 
@@ -7,6 +7,7 @@ const Track = () => {
   const [weight, setWeight] = useState("");
   const [reps, setReps] = useState("");
 
+  const navigate = useNavigate()
 
   const onChange1 = (e) => {
     setExercise(e.target.value);
@@ -24,13 +25,13 @@ const Track = () => {
     try{
       const body = {exercise, weight, reps};
 
-      const response = await fetch("http://localhost:5000/dashboard/track", {
+      await fetch("http://localhost:5000/dashboard/track", {
         method: "POST",
         headers: {"Content-Type" : "application/json", token: localStorage.token},
         body: JSON.stringify(body)
       });
 
-      console.log(response);
+      navigate("/view")
     }
     catch(err){
       console.error(err.message);
@@ -43,12 +44,12 @@ const Track = () => {
     <div className='Track'>
       <div className='track-div'>
         <label>Exercise</label>
-        <select name="selectedFruit" value={exercise} onChange={e => onChange1(e)}>
+        <select name="selectedFruit" value={exercise} onChange={e => onChange1(e)} required>
         <option value="" selected="selected" disabled hidden>Choose here</option>
           <option value="Inclined Bench Press">Inclined Bench Press</option>
           <option value="Peck Deck Flies">Peck Deck Flies</option>
           <option value="Lateral Raises">Lateral Raises</option>
-          <option value="Rear Delt Flies<">Rear Delt Flies</option>
+          <option value="Rear Delt Flies">Rear Delt Flies</option>
         </select>
       </div>
       <div className='track-div'>
@@ -61,7 +62,7 @@ const Track = () => {
       </div>
     </div>
     <div></div>
-    <button className="track-button">
+    <button className="track-button" >
       <span>Track</span>
       <span></span>
     </button>

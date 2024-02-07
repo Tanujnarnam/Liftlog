@@ -1,85 +1,67 @@
-.Track{
+.table{
   position: absolute;
-  top: 35%;
-  left: 7.5%;
-  width: 85%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.track-div label{
-  display: flex;
-  flex-direction: column-reverse;
-}
-
-select{
-  height: 48px;
-  width: 90%;
-  font-size: 21px;
-  font-family: sans-serif;
-  border-radius: 15px;
-  border: solid 2px black;
-  text-align: center;
-}
-
-.track-input{
+  left: 10%;
+  top: 25%;
   width: 80%;
   text-align: center;
-  border-radius: 15px;
-  font-size: 21px;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 300px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-.animated-button2 {
-  position: absolute;
-  top: 45%;
-  left: 48%;
-  transform: translateX(-50%);
-  display: inline-block;
-  padding: 12px 24px;
+table, tr{
+  border: 1px solid;
+  border-collapse: collapse;
+  background-color: black;
+  color: white;
+  text-align: left;
+}
+
+th{
+  background-color: #4C4E4E;
+}
+
+.table th,
+.table td {
+    padding: 12px 15px;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+  background-color: #4C4E4E;
+}
+
+.table tr:hover{
+  color: #A5A6A6;
+}
+
+table{
+  width: 100%;
+}
+
+input{
+  padding: 10px;
+}
+
+.input {
+  width: 100%;
   margin: 1%;
   border: none;
-  font-size: 16px;
-  background-color: inherit;
-  border-radius: 100px;
-  font-weight: 600;
-  color: black;
-  border:solid black 1px;
-  box-shadow: 0 0 0 2px #ffffff20;
-  cursor: pointer;
-  overflow: hidden;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-  text-decoration: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 1em;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.5);
+  transition: 300ms ease-in-out;
 }
 
-.animated-button2 span:last-child {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  background-color: black;
-  border-radius: 50%;
-  opacity: 0;
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-.animated-button2 span:first-child {
-  position: relative;
-  z-index: 1;
-}
-
-.animated-button2:hover {
-  box-shadow: 0 0 0 2px lightgrey;
-  color: #ffffff;
-}
-
-.animated-button2:active {
-  scale: 0.95;
-}
-
-.animated-button2:hover span:last-child {
-  width: 150px;
-  height: 150px;
-  opacity: 1;
+.input:focus {
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px black,
+             -13px -13px 100px #ffffff;
 }

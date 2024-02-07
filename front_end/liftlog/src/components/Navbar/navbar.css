@@ -16,7 +16,7 @@
 
 .NavLinks{
   display: flex;
-  width: 30%;
+  width: 47%;
   padding-right: 35px;
   justify-content: space-between;
   align-items: center;
@@ -32,6 +32,18 @@
 .anchor:hover{
   background-color: rgba(192,192,192,0.3);
 }
+
+.logout{
+  color: white;
+  text-decoration: none;
+  padding: 10px 17px;
+  border-radius: 13px;
+}
+
+.logout:hover{
+  background-color: rgba(238,75,43,0.7);
+}
+
 
 .logo2{
   color: white;

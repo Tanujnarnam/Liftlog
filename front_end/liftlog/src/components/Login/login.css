@@ -14,12 +14,15 @@
   color: black;
 }
 
-input{
+.search-bar{
   padding: 10px;
 }
 
-.input {
-  width: 100%;
+.search-bar {
+  position: absolute;
+  top: 15%;
+  left: 7.5%;
+  width: 25%;
   margin: 1%;
   border: none;
   outline: none;
@@ -30,7 +33,7 @@ input{
   transition: 300ms ease-in-out;
 }
 
-.input:focus {
+.search-bar:focus {
   background-color: white;
   transform: scale(1.05);
   box-shadow: 13px 13px 100px black,

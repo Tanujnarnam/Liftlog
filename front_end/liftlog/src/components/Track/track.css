@@ -23,12 +23,43 @@
   box-sizing: border-box;
 }
 
+.Track{
+  position: absolute;
+  top: 35%;
+  left: 7.5%;
+  width: 85%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.track-div label{
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+select{
+  height: 48px;
+  width: 90%;
+  font-size: 21px;
+  font-family: sans-serif;
+  border-radius: 15px;
+  border: solid 2px black;
+  text-align: center;
+}
+
+.track-input{
+  width: 80%;
+  text-align: center;
+  border-radius: 15px;
+  font-size: 21px;
+}
+
 
 .track-button {
   width: 100px;
   position: relative;
   top: 90px;
-  left: 47%;
+  left: 50%;
   transform: translateX(-50%);
   padding: 12px 24px;
   margin: 1%;

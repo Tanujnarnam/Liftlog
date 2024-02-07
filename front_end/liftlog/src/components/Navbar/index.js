@@ -5,7 +5,7 @@ import { faDumbbell, faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 
 
-const Navbar = () => {
+const Navbar = ({setAuth}) => {
   const [toggle, setToggle] = useState(false);
   const [width] = useState(window.innerWidth);
 
@@ -23,6 +23,16 @@ const Navbar = () => {
       setToggle(false);
     }
   }
+
+  const logout = async e => {
+    e.preventDefault();
+    try {
+      localStorage.removeItem("token");
+      setAuth(false);
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
 
   window.addEventListener('resize', handleResize);
 
@@ -42,6 +52,9 @@ const Navbar = () => {
         </NavLink>
         <NavLink exact="true" className="anchor" to="/view">
           View
+        </NavLink>
+        <NavLink exact="true" className="logout" onClick={e => logout(e)}>
+          Logout
         </NavLink>
       </div>
     </nav>
