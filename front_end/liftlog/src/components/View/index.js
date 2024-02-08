@@ -10,26 +10,25 @@ const View = () => {
   const handleSearchChange = (event) => {
     setQuery(event.target.value)
   }
-
-  const getData = async () => {
-    try{
-      const response = await fetch("https://liftlog-3dz3.onrender.com/dashboard/view" ,{
-        method: "GET",
-        headers: {token: localStorage.token}
-      });
-
-      const parseRes = await response.json();
-
-      setData(parseRes);
-      setfiltData(parseRes);
-    }
-    catch(err){
-      console.error(err.message);
-    }
-  }
   
   useEffect(() => {
-    getData()
+    const getData = async () => {
+      try{
+        const response = await fetch("https://liftlog-3dz3.onrender.com/dashboard/view" ,{
+          method: "GET",
+          headers: {token: localStorage.token}
+        });
+  
+        const parseRes = await response.json();
+  
+        setData(parseRes);
+        setfiltData(parseRes);
+      }
+      catch(err){
+        console.error(err.message);
+      }
+    }
+    getData();
   }, []);
 
   useEffect(() => {
