@@ -35,7 +35,7 @@ const View = () => {
     setfiltData((data).filter((el) => {
       return el.exercise.toLowerCase().startsWith(searchQuery.toLowerCase());
     }));
-  }, [searchQuery]
+  }, [searchQuery, data]
   )
 
   console.log(data);
