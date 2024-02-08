@@ -25,7 +25,7 @@ const Track = () => {
     try{
       const body = {exercise, weight, reps};
 
-      await fetch("http://localhost:5000/dashboard/track", {
+      await fetch("https://liftlog-3dz3.onrender.com/dashboard/track", {
         method: "POST",
         headers: {"Content-Type" : "application/json", token: localStorage.token},
         body: JSON.stringify(body)

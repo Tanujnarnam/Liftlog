@@ -37,7 +37,7 @@ const Signup = ({setAuth}) => {
 
       const body = {username, password};
 
-      const response = await fetch("http://localhost:5000/auth/register", {
+      const response = await fetch("https://liftlog-3dz3.onrender.com/auth/register", {
         method: "POST",
         headers: {token: localStorage.token},
         body: JSON.stringify(body)

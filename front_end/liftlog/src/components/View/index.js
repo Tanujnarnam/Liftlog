@@ -13,7 +13,7 @@ const View = () => {
 
   const getData = async () => {
     try{
-      const response = await fetch("http://localhost:5000/dashboard/view" ,{
+      const response = await fetch("https://liftlog-3dz3.onrender.com/dashboard/view" ,{
         method: "GET",
         headers: {token: localStorage.token}
       });

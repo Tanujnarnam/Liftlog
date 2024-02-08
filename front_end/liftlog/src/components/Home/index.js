@@ -8,7 +8,7 @@ const Home = () => {
 
   const getName = async () => {
     try{
-      const response = await fetch("http://localhost:5000/dashboard/" ,{
+      const response = await fetch("https://liftlog-3dz3.onrender.com/dashboard/" ,{
         method: "GET",
         headers: {token: localStorage.token}
       });
