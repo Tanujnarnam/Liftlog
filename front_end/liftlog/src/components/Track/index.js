@@ -50,6 +50,12 @@ const Track = () => {
           <option value="Peck Deck Flies">Peck Deck Flies</option>
           <option value="Lateral Raises">Lateral Raises</option>
           <option value="Rear Delt Flies">Rear Delt Flies</option>
+          <option value="Lat Pulldowns">Lat Pulldowns</option>
+          <option value="Chest Supported Rows">Chest Supported Rows</option>
+          <option value="Leg Extensions">Leg Extensions</option>
+          <option value="Hamstring Curls">Hamstring Curls</option>
+          <option value="Calf Raises">Calf Raises</option>
+          <option value="Forearm Curls">Forearm Curls</option>
         </select>
       </div>
       <div className='track-div'>

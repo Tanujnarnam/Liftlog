@@ -38,8 +38,6 @@ const View = () => {
   }, [searchQuery, data]
   )
 
-  console.log(data);
-
   return(
     <>
     <div className='exercise-search'>
