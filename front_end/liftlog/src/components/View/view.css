@@ -8,6 +8,7 @@
   font-family: sans-serif;
   min-width: 300px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  z-index: -3;
 }
 
 table, tr{
@@ -45,6 +46,7 @@ table{
 
 input{
   padding: 10px;
+  z-index: -3;
 }
 
 .input {
