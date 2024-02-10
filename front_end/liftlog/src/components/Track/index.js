@@ -45,7 +45,7 @@ const Track = () => {
       <div className='track-div'>
         <label>Exercise</label>
         <select name="selectedFruit" value={exercise} onChange={e => onChange1(e)} required>
-        <option value="" selected="selected" disabled hidden>Choose here</option>
+        <option value="" defaultValue disabled hidden>Choose here</option>
           <option value="Inclined Bench Press">Inclined Bench Press</option>
           <option value="Peck Deck Flies">Peck Deck Flies</option>
           <option value="Lateral Raises">Lateral Raises</option>

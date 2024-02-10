@@ -39,7 +39,7 @@ const Signup = ({setAuth}) => {
 
       const response = await fetch("https://liftlog-3dz3.onrender.com/auth/register", {
         method: "POST",
-        headers: {token: localStorage.token},
+        headers: {"Content-Type": "application/json", token: localStorage.token},
         body: JSON.stringify(body)
       });
 
